@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
+import IMessage from './IMessage'
 
 
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="app">
       <h1>こんにちは</h1>
+      <IMessage/>
     </div>
   )
 }
