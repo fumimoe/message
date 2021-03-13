@@ -1,0 +1,54 @@
+.sidebar{
+  /* sidebarの横幅を0.35に指定する */
+  flex: 0.35;
+  height: 100vh;
+  display: flex;
+  /* ここで縦にチャットのグループが表示されるように指定する */
+  flex-direction: column;
+  
+  background-color: #f5f5f5;
+  border-right: 1px solid lightgray;
+}
+
+.sidebar__header{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: 50px;
+}
+
+.sidebar__abatar{
+    cursor: pointer;
+    margin:10px;
+}
+.sidebar__input{
+
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    flex: 1;
+    /* inputアイコンと一緒にbackgroundを同じ色にする今回は白 */
+    background-color: #e1e1e1;
+    color: gray;
+    border-radius: 5px;
+}
+
+.sidebar__input > input {
+    /* borderを消すことでアイコンと一緒に見せることができる */
+    border: none;
+    /* カラーが透明になるので後ろにある色が映る */
+    background: transparent;
+}
+
+.sidebar__chats{
+    /* ボックスに収まらない時は隠してスクロールバーを表示する */
+    overflow: scroll;
+    /* IE and Edge */
+    -ms-overflow-style: none;
+    /* firefox */
+    scrollbar-width: none;
+}
+
+.sidebar__chats::-webkit-scrollbar{
+    display: none;
+}
