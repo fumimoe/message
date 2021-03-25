@@ -1,0 +1,26 @@
+.login{
+    display: grid;
+    /* gridした中の中央に揃えることができる */
+    place-items: center;
+    /* 上から10%離して表示させる */
+    height: 100vh;
+    width: 100%;
+}
+
+.login > div > img{
+    /* gridした中に治るように表示する */
+    object-fit: contain;
+    height: 150px;
+}
+
+.login > button{
+    /* 上の画像を高さ150pxにしてるので横も同じ150pxである */
+    width: 300px;
+    background-color: rgb(77, 154, 226);
+    color: white;
+    font-weight: 800;
+}
+.login > button:hover{
+    background-color: gainsboro;
+    color: rgb(77, 154, 226);
+}
