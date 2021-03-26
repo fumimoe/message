@@ -15,23 +15,25 @@ const Sidebar = () => {
 const [chats,setChats] = useState([]);
 
 useEffect(() => {
-  db.collection('chats').onSnapshot(snapshot =>
+  db.collection('chats').onSnapshot((snapshot) =>
     // 一個（）をつけないとreturnを書かないといけなくなる
     setChats(snapshot.docs.map((doc) =>({
       id: doc.id,
       data: doc.data()
     })))
     )
-  
-}, [])
+    
+},[])
 
 const addChat = () => {
   const chatName = prompt('チャットに名前をいれてください');
+  console.log(chatName);
 
   if(chatName){
     db.collection('chats').add({
       chatName:chatName,
     })
+    
   }
   
 }
@@ -46,8 +48,8 @@ const addChat = () => {
           <SearchIcon />
           <input placeholder="検索" />
         </div>
-        <IconButton variant="outlined" className="sidebar__inputButton">
-          <RateReviewIcon onClick={addChat}/>
+        <IconButton variant="outlined" className="sidebar__inputButton" onClick={addChat}>
+          <RateReviewIcon />
         </IconButton>
       </div>
       <div className="sidebar__chats">
